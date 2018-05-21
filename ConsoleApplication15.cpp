@@ -2,54 +2,54 @@
 using namespace std;
 class Property
 {
-	protected:
-		int worth;
-		int tax;
+protected:
+	int worth;
+	int tax;
 		
-			public:
-				Property(int count)
-					 {
-					worth = count;
-					}
-					virtual void Tax() = 0;
-				};
+	public:
+	Property(int count)
+	 {
+		worth = count;
+			}
+		virtual void Tax() = 0;
+		};
 
 class Appartment : public Property
  {
 public:
 		
-			Appartment(int c)
-			 : Property(c)
-			 {}
+	Appartment(int c)
+	: Property(c)
+	{}
 		
-			void Tax() override
-			 {
-			tax = worth / 1000;
-			}
+	void Tax() override
+	{
+	tax = worth / 1000;
+	}
 		};
 
 class Car : public Property
  {
 	public:
-			Car(int c)
-			 : Property(c)
-			 {}
+	Car(int c)
+	: Property(c)
+	 {}
 		
-			void Tax() override
-			 {
-			tax = worth / 200;
-			}
+	void Tax() override
+	{
+	tax = worth / 200;
+	}
 		
-			};
+	};
 
 class CountryHouse : public Property
  {
 	public:
-			CountryHouse(int c)
-			 : Property(c)
-			 {}
+	CountryHouse(int c)
+	: Property(c)
+	{}
 		
-			void Tax() override
+	void Tax() override
  {
 	tax = worth / 500;
 	}
